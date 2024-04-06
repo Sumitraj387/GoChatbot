@@ -1,0 +1,4 @@
+openAi:
+  secret: "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"
+http:
+  address: "127.0.0.1:8080"
