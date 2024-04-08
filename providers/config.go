@@ -12,7 +12,7 @@ type OpenAiConfig struct {
 	SecretKey string `yaml:"secret"`
 }
 type HttpConfig struct {
-	Address string `yaml:"address"`
+	Address string `yaml:"address" envconfig:"LISTEN_ADDRESS"`
 }
 type AppConfig struct {
 	OpenAiConfig OpenAiConfig `yaml:"openAi"`
