@@ -22,7 +22,7 @@ type Repository struct {
 
 func (r Repository) SaveMessage(ctx context.Context, message modelV1.ChatMessages) (modelV1.ChatMessages, error) {
 	r.Logger.Info("SaveMessage() enter")
-	err := r.Db.Table(globals.CHAT_MESSAGE_TABLE).Create(message).Error
+	err := r.Db.Debug().Table(globals.CHAT_MESSAGE_TABLE).Create(&message).Error
 	if err != nil {
 		return modelV1.ChatMessages{}, err
 	}
@@ -31,7 +31,7 @@ func (r Repository) SaveMessage(ctx context.Context, message modelV1.ChatMessage
 }
 func (r Repository) SaveImage(ctx context.Context, message modelV1.ChatImages) (modelV1.ChatImages, error) {
 	r.Logger.Info("SaveImage() enter")
-	err := r.Db.Table(globals.CHAT_IMAGE_TABLE).Create(message).Error
+	err := r.Db.Debug().Table(globals.CHAT_IMAGE_TABLE).Create(&message).Error
 	if err != nil {
 		return modelV1.ChatImages{}, err
 	}

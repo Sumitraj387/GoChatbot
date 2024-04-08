@@ -17,6 +17,18 @@ type HttpConfig struct {
 type AppConfig struct {
 	OpenAiConfig OpenAiConfig `yaml:"openAi"`
 	HttpConfig   HttpConfig   `yaml:"http"`
+	DbConfig     DbConfig     `yaml:"db"`
+}
+type DbConfig struct {
+	Host        string `yaml:"host" envconfig:"DB_HOST"`
+	Port        int    `yaml:"port" envconfig:"DB_PORT"`
+	User        string `yaml:"user" envconfig:"DB_USER"`
+	Password    string `yaml:"password" envconfig:"DB_PASSWORD"`
+	Name        string `yaml:"name" envconfig:"DB_NAME"`
+	Timeout     int    `yaml:"timeout" envconfig:"DB_CONNECTION_TIMEOUT"`
+	MaxOpenConn int    `yaml:"maxOpenConn" envconfig:"DB_MAX_OPEN_CONNECTIONS"`
+	MaxIdleConn int    `yaml:"maxIdleConn" envconfig:"DB_MAX_IDLE_CONNECTIONS"`
+	SearchPath  string `yaml:"searchPath" envconfig:"DB_SEARCH_PATH"`
 }
 
 var (
