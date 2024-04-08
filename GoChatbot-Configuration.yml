@@ -1,0 +1,14 @@
+openAi:
+  secret: "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"
+http:
+  address: "127.0.0.1:8080"
+db:
+  host: "localhost"
+  port: 5432
+  user: "postgres"
+  password: "postgres"
+  name: "Chatbot3"
+  timeout: 5
+  maxIdleConn: 10
+  maxOpenConn: 10
+  searchPath: ""
